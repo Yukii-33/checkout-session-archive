@@ -14,7 +14,7 @@ The response carries `status: "fulfilled"`, a room name, and a room token. The s
 
 ## Operational boundary
 
-The request's `receipt_text` stands in for a completed session artefact or generated receipt and is published as event data; this example does not create persistent storage resources. Keep the server key on the backend and return only the customer room token to a browser. The room and channel are named from a stable order ID so an operator can trace one checkout across both capabilities.
+The request's `receipt_text` stands in for a completed session artefact or generated receipt and is published as event data; this example does not create persistent storage resources. Gotcha: we once left the server key in browser code—keep it backend-only, return only the customer room token. The room and channel are named from a stable order ID so an operator can trace one checkout across both capabilities.
 
 ## Decision check
 
@@ -22,7 +22,7 @@ The request's `receipt_text` stands in for a completed session artefact or gener
 
 ## Setting up for real use: Checkout Session Archive
 
-The code stays simple on purpose — here's what to set up before going live: The details below apply to Checkout Session Archive.
+The code stays minimal by design. Details below apply to Checkout Session Archive.
 
 **Account & key**
 
